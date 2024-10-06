@@ -8,6 +8,18 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+Route::view('lencana', 'badge')
+    ->middleware(['auth', 'verified'])
+    ->name('badge');
+
+Route::view('my-qrcode', 'myqrcode')
+    ->middleware(['auth', 'verified'])
+    ->name('myqrcode');
+
+Route::view('kelola-lencana', 'manage-badge')
+    ->middleware(['auth', 'verified'])
+    ->name('manage-badge');
+
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
