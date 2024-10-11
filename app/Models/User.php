@@ -4,7 +4,6 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -25,7 +24,7 @@ class User extends Authenticatable
         'role',
     ];
 
-    protected $with = ['badge'];
+    protected $with = ['badge','admin'];
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -52,5 +51,9 @@ class User extends Authenticatable
     public function badge(): HasOne
     {
         return $this->hasOne(Badge::class);
+    }
+    public function admin(): HasOne
+    {
+        return $this->hasOne(AdminStand::class);
     }
 }

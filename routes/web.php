@@ -24,4 +24,6 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
+Route::view('test', 'testing');
+
 require __DIR__.'/auth.php';

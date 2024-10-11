@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\Badge;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -29,6 +30,7 @@ new #[Layout('layouts.guest')] class extends Component
         $validated['password'] = Hash::make($validated['password']);
 
         event(new Registered($user = User::create($validated)));
+        $badge = Badge::create(["user_id" => $user->id]);
 
         Auth::login($user);
 
