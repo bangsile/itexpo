@@ -42,6 +42,14 @@ new class extends Component {
               {{ __('Kelola Lencana') }}
             </x-nav-link>
           @endif
+          @if (auth()->user()->role == 'super-admin')
+            <x-nav-link :href="route('manage-guest')" :active="request()->routeIs('manage-guest')" wire:navigate>
+              {{ __('Kelola Pengunjung') }}
+            </x-nav-link>
+            <x-nav-link :href="route('manage-admin')" :active="request()->routeIs('manage-admin')" wire:navigate>
+              {{ __('Kelola Admin') }}
+            </x-nav-link>
+          @endif
         </div>
       </div>
 
@@ -110,6 +118,14 @@ new class extends Component {
       @if (auth()->user()->role == 'admin')
         <x-responsive-nav-link :href="route('manage-badge')" :active="request()->routeIs('manage-badge')" wire:navigate>
           {{ __('Kelola Lencana') }}
+        </x-responsive-nav-link>
+      @endif
+      @if (auth()->user()->role == 'super-admin')
+        <x-responsive-nav-link :href="route('manage-guest')" :active="request()->routeIs('manage-guest')" wire:navigate>
+          {{ __('Kelola Pengunjung') }}
+        </x-responsive-nav-link>
+        <x-responsive-nav-link :href="route('manage-admin')" :active="request()->routeIs('manage-admin')" wire:navigate>
+          {{ __('Kelola Admin') }}
         </x-responsive-nav-link>
       @endif
     </div>

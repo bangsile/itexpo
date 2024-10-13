@@ -56,4 +56,13 @@ class User extends Authenticatable
     {
         return $this->hasOne(AdminStand::class);
     }
+
+    public function scopeSearch($query, $search): void
+    {
+        $query->where(
+            function($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%");
+            }
+        );
+    }
 }
