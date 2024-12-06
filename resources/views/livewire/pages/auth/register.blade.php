@@ -25,6 +25,8 @@ new #[Layout('layouts.guest')] class extends Component
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
+        ],[
+            'email.unique' => 'Username sudah terdaftar',
         ]);
 
         $validated['password'] = Hash::make($validated['password']);

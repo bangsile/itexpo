@@ -58,6 +58,11 @@ Route::middleware(['auth', 'checkRole:super-admin'])->group(function () {
 Route::post('cek-pengunjung', [ScannerController::class, 'cekPengunjung'])->middleware(['auth', 'checkRole:admin'])->name('cek-pengunjung');
 Route::post('update-lencana', [ScannerController::class, 'updateBadge'])->middleware(['auth', 'checkRole:admin'])->name('update-badge');
 
-
-
 require __DIR__ . '/auth.php';
+
+Route::fallback(function () {
+    return redirect(route('dashboard'));
+});
+// Route::get('/*', function () {
+//     return redirect(route('dashboard'));
+// });
