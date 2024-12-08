@@ -10,7 +10,7 @@ class GuestList extends Component
     public $search = '';
     public function render()
     {
-        $stands = ['website', 'iot', 'mobile', 'cyber', 'multimedia', 'gis', 'game', 'network', 'troubleshoot'];
+        $stands = ['Website', 'IoT', 'Mobile', 'Cyber', 'Multimedia', 'GIS', 'Game', 'Networking', 'Troubleshooting'];
 
         return view('livewire.guest-list', [
             "guests" => User::where('role', 'pengunjung')->search(trim($this->search))->paginate(10),

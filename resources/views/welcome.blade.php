@@ -16,7 +16,7 @@
 </head>
 
 <body class="antialiased font-sans">
-  <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+  <div class="bg-gray-50 text-black/50">
 
     <div
       class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
@@ -28,7 +28,7 @@
 
           <div class="text-center mt-10 text-xl font-semibold">
             <h1>SELAMAT DATANG</h1>
-            <h1 class="text-2xl font-bold">IT-EXPO 7.0 - HMTI</h1>
+            <h1 class="text-3xl font-bold text-sky-600">IT-EXPO 7.0</h1>
             <h1>2024</h1>
           </div>
 
@@ -43,14 +43,16 @@
                 onclick="location.href = '{{ route('register') }}'">Registrasi Akun</x-primary-button>
             @endif
             <x-primary-button class="flex justify-center"
-              onclick="location.href = '{{ env('APP_PRESENSI_URL') }}'">Registrasi Pengunjung</x-primary-button>
+              onclick="location.href = '{{ route('registrasi-pengunjung') }}'">Registrasi Pengunjung</x-primary-button>
+            <x-primary-button class="flex justify-center"
+              onclick="location.href = '{{ route('feedback') }}'">Feedback</x-primary-button>
           </div>
 
         </div>
 
 
         <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-          IT-EXPO 7.0 - HMTI 2024
+          &copy; IT-EXPO 7.0 - HMTI 2024
         </footer>
       </div>
     </div>

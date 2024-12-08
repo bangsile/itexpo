@@ -15,36 +15,84 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Lisa',
-            'email' => 'lisa',
-            'role' => 'admin',
-        ]);
-        User::factory()->create([
-            'name' => 'Alisa',
-            'email' => 'alisa',
-            'role' => 'admin',
-        ]);
         User::factory()->create([
             'name' => 'Asil',
             'email' => 'asil',
             'role' => 'super-admin',
         ]);
         User::factory()->create([
+            'name' => 'Website Admin',
+            'email' => 'website',
+            'role' => 'admin',
+        ]);
+        User::factory()->create([
+            'name' => 'Cyber Admin',
+            'email' => 'cyber',
+            'role' => 'admin',
+        ]);
+        User::factory()->create([
+            'name' => 'IoT Admin',
+            'email' => 'iot',
+            'role' => 'admin',
+        ]);
+        User::factory()->create([
+            'name' => 'Game Admin',
+            'email' => 'game',
+            'role' => 'admin',
+        ]);
+        User::factory()->create([
+            'name' => 'GIS Admin',
+            'email' => 'gis',
+            'role' => 'admin',
+        ]);
+        User::factory()->create([
+            'name' => 'Mobile Admin',
+            'email' => 'mobile',
+            'role' => 'admin',
+        ]);
+        User::factory()->create([
+            'name' => 'Troubleshooting Admin',
+            'email' => 'troubleshooting',
+            'role' => 'admin',
+        ]);
+        User::factory()->create([
+            'name' => 'Networking Admin',
+            'email' => 'networking',
+            'role' => 'admin',
+        ]);
+        User::factory()->create([
+            'name' => 'Multimedia Admin',
+            'email' => 'Multimedia',
+            'role' => 'admin',
+        ]);
+        User::factory()->create([
+            'name' => 'Resepsionis',
+            'email' => 'resepsionis',
+            'role' => 'resepsionis',
+        ]);
+        User::factory()->create([
             'name' => 'Alif Nugraha',
             'email' => 'alifnugraha',
         ]);
         User::factory()->create([
-            'name' => 'Usamah Robbani',
-            'email' => 'usamah',
+            'name' => 'Super Admin',
+            'email' => 'admin',
+            'role' => 'super-admin',
         ]);
         
-        AdminStand::create(['user_id' => 1, 'stand'=> 'mobile']);
-        AdminStand::create(['user_id' => 2, 'stand'=> 'cyber']);
+        AdminStand::create(['user_id' => 2, 'stand'=> 'Website']);
+        AdminStand::create(['user_id' => 3, 'stand'=> 'Cyber']);
+        AdminStand::create(['user_id' => 4, 'stand'=> 'IoT']);
+        AdminStand::create(['user_id' => 5, 'stand'=> 'Game']);
+        AdminStand::create(['user_id' => 6, 'stand'=> 'GIS']);
+        AdminStand::create(['user_id' => 7, 'stand'=> 'Mobile']);
+        AdminStand::create(['user_id' => 8, 'stand'=> 'Troubleshooting']);
+        AdminStand::create(['user_id' => 9, 'stand'=> 'Networking']);
+        AdminStand::create(['user_id' => 10, 'stand'=> 'Multimedia']);
 
-        Badge::create(['user_id' => 4]);
-        Badge::create(['user_id' => 5]);
+        Badge::create([
+            'user_id' => 12,
+        ]);
     }
 }

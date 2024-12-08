@@ -10,16 +10,15 @@ class BadgeList extends Component
 {
     // public 
 
-    public function mount()
-    {
-        
-    }
+    public function mount() {}
     public function render()
     {
 
         $badges = Badge::where('user_id', Auth::user()->id)->first();
         $totalBadge = 0;
-        $stands = ['website', 'iot', 'mobile', 'cyber', 'multimedia', 'gis', 'game', 'network', 'troubleshoot'];
+        $stands = ['Website', 'IoT', 'Mobile', 'Cyber', 'Multimedia', 'GIS', 'Game', 'network', 'Troubleshooting'];
+
+        // $stands = ['website', 'iot', 'mobile', 'cyber', 'multimedia', 'gis', 'game', 'network', 'troubleshoot'];
         foreach ($stands as $stand) {
             if ($badges->$stand) {
                 $totalBadge++;

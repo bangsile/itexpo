@@ -11,15 +11,15 @@ class Badge extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'website',
-        'iot',
-        'mobile',
-        'cyber',
-        'multimedia',
-        'gis',
-        'game',
-        'network',
-        'troubleshoot',
+        'Website',
+        'IoT',
+        'Mobile',
+        'Cyber',
+        'Multimedia',
+        'GIS',
+        'Game',
+        'Network',
+        'Troubleshoot',
     ];
     public function badge(): BelongsTo
     {

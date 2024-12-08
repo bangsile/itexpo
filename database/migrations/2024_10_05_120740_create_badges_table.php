@@ -18,15 +18,15 @@ return new class extends Migration
                 indexName: 'users_id_foreign_badge',
                 column: 'id'
             );
-            $table->boolean('website')->default(false);
-            $table->boolean('iot')->default(false);
-            $table->boolean('mobile')->default(false);
-            $table->boolean('cyber')->default(false);
-            $table->boolean('multimedia')->default(false);
-            $table->boolean('gis')->default(false);
-            $table->boolean('game')->default(false);
-            $table->boolean('network')->default(false);
-            $table->boolean('troubleshoot')->default(false);
+            $table->boolean('Website')->default(false);
+            $table->boolean('IoT')->default(false);
+            $table->boolean('Mobile')->default(false);
+            $table->boolean('Cyber')->default(false);
+            $table->boolean('Multimedia')->default(false);
+            $table->boolean('GIS')->default(false);
+            $table->boolean('Game')->default(false);
+            $table->boolean('Network')->default(false);
+            $table->boolean('Troubleshooting')->default(false);
             $table->timestamps();
         });
     }

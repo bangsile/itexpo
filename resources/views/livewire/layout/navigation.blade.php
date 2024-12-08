@@ -22,7 +22,7 @@ new class extends Component {
       <div class="flex">
         <!-- Logo -->
         <div class="shrink-0 flex items-center">
-          <a href="{{ route('dashboard') }}" wire:navigate>
+          <a href="/" wire:navigate>
             <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
           </a>
         </div>
@@ -42,12 +42,23 @@ new class extends Component {
               {{ __('Kelola Lencana') }}
             </x-nav-link>
           @endif
+          @if (auth()->user()->role == 'super-admin' || auth()->user()->role == 'resepsionis')
+              
+          <x-nav-link :href="route('daftar-pengunjung')" :active="request()->routeIs('daftar-pengunjung')" wire:navigate>
+            {{ __('Daftar Pengunjung') }}
+          </x-nav-link>
+          @endif
           @if (auth()->user()->role == 'super-admin')
             <x-nav-link :href="route('manage-guest')" :active="request()->routeIs('manage-guest')" wire:navigate>
               {{ __('Kelola Pengunjung') }}
             </x-nav-link>
             <x-nav-link :href="route('manage-admin')" :active="request()->routeIs('manage-admin')" wire:navigate>
               {{ __('Kelola Admin') }}
+            </x-nav-link>
+          @endif
+          @if (auth()->user()->role == 'super-admin' || auth()->user()->role == 'admin')
+            <x-nav-link :href="route('daftar-feedback')" :active="request()->routeIs('daftar-feedback')" wire:navigate>
+              {{ __('Daftar Feedback') }}
             </x-nav-link>
           @endif
         </div>
@@ -75,9 +86,11 @@ new class extends Component {
             <x-dropdown-link :href="route('profile')" wire:navigate>
               {{ __('Profile') }}
             </x-dropdown-link>
-            <x-dropdown-link :href="route('myqrcode')" wire:navigate>
-              {{ __('My QR Code') }}
-            </x-dropdown-link>
+            @if (auth()->user()->role == 'pengunjung')
+          <x-responsive-nav-link :href="route('myqrcode')" wire:navigate>
+            {{ __('My QR Code') }}
+          </x-responsive-nav-link>
+        @endif
 
             <!-- Authentication -->
             <button wire:click="logout" class="w-full text-start">
@@ -142,9 +155,11 @@ new class extends Component {
         <x-responsive-nav-link :href="route('profile')" wire:navigate>
           {{ __('Profile') }}
         </x-responsive-nav-link>
-        <x-responsive-nav-link :href="route('myqrcode')" wire:navigate>
-          {{ __('My QR Code') }}
-        </x-responsive-nav-link>
+        @if (auth()->user()->role == 'pengunjung')
+          <x-responsive-nav-link :href="route('myqrcode')" wire:navigate>
+            {{ __('My QR Code') }}
+          </x-responsive-nav-link>
+        @endif
 
         <!-- Authentication -->
         <button wire:click="logout" class="w-full text-start">

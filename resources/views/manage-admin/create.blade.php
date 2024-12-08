@@ -50,16 +50,16 @@
 
               <select name="stand" id="stand"
                 class="mt-1.5 w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm">
-                <option value="">Please select</option>
-                <option value="website">Website</option>
-                <option value="iot">IoT</option>
-                <option value="mobile">Mobile</option>
-                <option value="cyber">Cyber</option>
-                <option value="multimedia">Multimedia</option>
-                <option value="gis">GIS</option>
-                <option value="game">Game</option>
-                <option value="network">Network</option>
-                <option value="troubleshoot">Troubleshoot</option>
+                <option value="" selected disabled>Pilih Stand</option>
+                <option value="Website">Website</option>
+                <option value="Networking">Networking</option>
+                <option value="IoT">Internet of Things (IoT)</option>
+                <option value="Game">Game</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Cyber">Cyber Security</option>
+                <option value="Multimedia">Multimedia</option>
+                <option value="GIS">Geographic Information System (GIS)</option>
+                <option value="Troubleshooting">Troubleshooting</option>
               </select>
             </div>
 
