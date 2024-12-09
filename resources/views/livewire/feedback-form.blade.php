@@ -38,6 +38,9 @@
 
 
       <div class="flex items-center justify-end mt-4">
+        <x-secondary-button class="ms-4" type="button" onclick="window.history.back()">
+          {{ __('Kembali') }}
+        </x-secondary-button>
         <x-primary-button class="ms-4" type="submit">
           {{ __('Kirim') }}
         </x-primary-button>
